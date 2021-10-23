@@ -130,12 +130,84 @@ var digitCounts = Array(repeating: 0, count: 10)
 
 Sets are collections of values just like arrays, except they have two differences:
 * Items aren’t stored in any order; they are stored in what is effectively a random order.
-*  No item can appear twice in a set; all items must be unique.
-
+* No item can appear twice in a set; all items must be unique.
 * If you try to insert a duplicate item into a set, the duplicates get ignored. 
 
 ```swift
 let colors = Set(["red", "green", "blue"])
 # type annotation
 let ingredients: Set = ["cocoa beans", "sugar", "cocoa butter", "salt"]
+```
+
+
+### tuples
+
+Tuples allow you to store several values together in a single value. That might sound like arrays, but tuples are different:
+* You can’t add or remove items from a tuple; they are fixed in size.
+* You can’t change the type of items in a tuple; they always have the same types they were created with.
+* You can access items in a tuple using numerical positions or by naming them, but Swift won’t let you read numbers or names that don’t exist.
+
+```swift
+var name = (first: "Taylor", last: "Swift")
+name.0 #-> Tayloar
+name.first #-> Taylot
+```
+
+
+### dictonnaries
+
+a K/V type
+
+```swift
+let heights = [
+    "Taylor Swift": 1.78,
+    "Ed Sheeran": 1.73
+]
+heights["Taylor Swift"] #-> 1.78
+
+//Type annotation
+let heights: [String: Double] = [
+    "Taylor Swift": 1.78,
+    "Ed Sheeran": 1.73
+]
+```
+
+You can also specify a default value if the key doesn't exist
+```swift
+let favoriteIceCream = [
+    "Paul": "Chocolate",
+    "Sophie": "Vanilla"
+]
+favoriteIceCream["Charlotte", default: "Unknown"]
+//-> "Unknown"
+```
+
+### enums
+
+define an enum that stores various kinds of activities:
+
+```swift
+enum Activity {
+    case bored
+    case running
+    case talking
+    case singing
+}
+
+//That lets us say that someone is talking, but we don’t know what they are talking about, 
+// or we can know that someone is running, but we don’t know where they are running to.
+// Enum associated values let us add those additional details:
+
+enum Activity {
+    case bored
+    case running(destination: String)
+    case talking(topic: String)
+    case singing(volume: Int)
+}
+
+//Now we can be more precise – we can say that someone is talking about football:
+
+let talking = Activity.talking(topic: "football")
+```
+
 
