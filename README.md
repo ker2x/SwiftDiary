@@ -210,4 +210,9 @@ enum Activity {
 let talking = Activity.talking(topic: "football")
 ```
 
+## Day 3
+
+Nothing that deserve a note
+
+
 
