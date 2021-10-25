@@ -223,5 +223,14 @@ let driving = { (place: String) in
 }
 ```
 
+returning value : 
+```swift
+let drivingWithReturn = { (place: String) -> String in
+    return "I'm going to \(place) in my car"
+}
+```
+
+
+
 
 
