@@ -3,8 +3,6 @@
 * https://www.hackingwithswift.com/100
 
 
-## Day 1
-
 ### getting started with stuff
 
 * Start XCode, don't create a new project.
@@ -99,8 +97,6 @@ score=10
 results
 // -> "The test results are here: Your score was 85"
 ```
-
-## day 2
 
 ### array
 
@@ -210,9 +206,22 @@ enum Activity {
 let talking = Activity.talking(topic: "football")
 ```
 
-## Day 3
+### closure
 
-Nothing that deserve a note
+without parameter : 
+
+```swift
+let driving = {
+    print("I'm going somewhere in my car")
+}
+```
+
+with parameters : 
+```swift
+let driving = { (place: String) in
+    print("I'm going to \(place) in my car")
+}
+```
 
 
 
